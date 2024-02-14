@@ -1,0 +1,32 @@
+{% load static %}
+<!-- templates/base.html -->
+
+<!--<!DOCTYPE html>-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Todo List{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Todo List</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'todos_list' %}">All Todos</a></li>
+                <li><a href="{% url 'create_todo' %}">Create Todo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Todo List</p>
+    </footer>
+</body>
+</html>

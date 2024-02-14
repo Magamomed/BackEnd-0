@@ -1,0 +1,14 @@
+<!-- templates/todos/todo_detail.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Todo Detail{% endblock %}
+
+{% block content %}
+    <h2>{{ todo.title }}</h2>
+    <p>Description: {{ todo.description }}</p>
+    <p>Due Date: {{ todo.due_date }}</p>
+    <p>Status: {% if todo.status %}Complete{% else %}Incomplete{% endif %}</p>
+    <p><a href="{% url 'update_todo' pk=todo.pk %}">Edit</a> | <a href="{% url 'delete_todo' pk=todo.pk %}">Delete</a></p>
+{% endblock %}
+

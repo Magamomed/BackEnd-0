@@ -1,0 +1,18 @@
+<!-- templates/todos/todos_list.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Todo List{% endblock %}
+
+{% block content %}
+<!--    <h1>Todo List</h1>-->
+    <ul>
+        {% for todo in todos %}
+            <li>
+                <a href="{% url 'todo_detail' todo.id %}">{{ todo.title }}</a>
+                <a href="{% url 'delete_todo' todo.id %}">Delete</a> <!-- Добавление ссылки на удаление -->
+            </li>
+        {% endfor %}
+    </ul>
+<!--    <a href="{% url 'create_todo' %}">Create Todo</a>-->
+{% endblock %}
